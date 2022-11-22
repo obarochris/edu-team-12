@@ -31,6 +31,11 @@ const userSchema = mongoose.Schema({
     type: String,
     default: 'student'
     },
+    registration: {
+        type: mongoose.Schema.ObjectId,
+        ref: 'Registration',
+        //required: true
+    },
     photo: {
         id: { 
           type: String,
