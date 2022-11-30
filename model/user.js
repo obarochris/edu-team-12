@@ -10,10 +10,20 @@ const userSchema = mongoose.Schema({
         required: [true, "Please provide a name"],
         maxLength: [20, "Name should be under 20 characters"],
     },
-    name: {
+    firstName: {
         type: String,
-        required: [true, "Please provide a name"],
-        maxLength: [40, "Name should be under 40 characters"],
+        required: [true, "Please provide your first name"],
+        maxLength: [20, "Name should be under 40 characters"],
+    },
+    lastName: {
+        type: String,
+        required: [true, "Please provide your last name"],
+        maxLength: [20, "Name should be under 40 characters"],
+    },
+    middleName: {
+        type: String,
+        required: [true, "Please provide your middle name"],
+        maxLength: [20, "Name should be under 40 characters"],
     },
     email: {
         type: String,
@@ -36,14 +46,19 @@ const userSchema = mongoose.Schema({
         ref: 'Registration',
         //required: true
     },
+    studClass: {
+        type: mongoose.Schema.ObjectId,
+        ref: 'Class',
+        // required: true
+    },
     photo: {
         id: { 
           type: String,
-        //   required: true
+          required: true
         },
         secure_url: {
           type: String,
-        //   required: true
+          required: true
         },
       },
       createdAt: {
