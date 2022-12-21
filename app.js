@@ -19,10 +19,14 @@ app.use(fileUpload({
 //import route
 const user = require("./route/user");
 const register = require("./route/registration");
+const Class = require('./route/classRoute');
+const activity = require('./route/activityRoute');
 
 //router middleware
 app.use("/api/v1", user);
-app.use("/api/v1", register)
+app.use("/api/v1", register);
+app.use('/api/v1', Class);
+app.use("/api/v1", activity);
 
 app.get("/test", (req, res) => {
   res.json("signup Test");

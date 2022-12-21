@@ -7,7 +7,7 @@ exports.createID = bigPromise(async (req, res, next) => {
 
   if (!(registration_number || role)) {
     return next(
-      new customError("registration_number, name and role are required")
+      new customError("registration_number, name and role are required", 401)
     );
   }
 
